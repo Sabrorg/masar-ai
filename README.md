@@ -69,7 +69,7 @@ An intelligent HR assistant for Saudi Arabia combining RAG (Retrieval-Augmented 
 ## Project Structure | هيكل المشروع
 
 ```
-/home/saad/hr_case/
+/home/hr_case/
 ├── README.md                          # This file
 ├── requirements.txt                   # Python dependencies
 ├── config.py                          # Configuration (paths, settings)
@@ -132,7 +132,7 @@ conda activate exp
 ### Step 2: Install Dependencies
 
 ```bash
-cd /home/saad/hr_case
+cd /home/hr_case
 pip install -r requirements.txt
 ```
 
@@ -152,20 +152,20 @@ pip install -r requirements.txt
 #### Embedding Model (Required)
 ```bash
 # Download BAAI/bge-m3 or similar multilingual embedding model
-# Place in: /home/saad/hr_case/models1/BAAI__bge-m3/
+# Place in: /home/hr_case/models1/BAAI__bge-m3/
 
 # Example using Hugging Face CLI:
-cd /home/saad/hr_case/models1
+cd /home/hr_case/models1
 git clone https://huggingface.co/BAAI/bge-m3 BAAI__bge-m3
 ```
 
 #### LLM Model (Required for full functionality)
 ```bash
 # Download Qwen/Qwen3-1.7B or similar small instruct model
-# Place in: /home/saad/hr_case/models1/Qwen__Qwen3-1.7B/
+# Place in: /home/hr_case/models1/Qwen__Qwen3-1.7B/
 
 # Example:
-cd /home/saad/hr_case/models1
+cd /home/hr_case/models1
 git clone https://huggingface.co/Qwen/Qwen3-1.7B Qwen__Qwen3-1.7B
 ```
 
@@ -177,7 +177,7 @@ git clone https://huggingface.co/Qwen/Qwen3-1.7B Qwen__Qwen3-1.7B
 
 Place the Saudi labor bylaws PDF at:
 ```
-/home/saad/hr_case/اللائحة التنفيذية لنظام العمل وملحقاتها.pdf
+/home/hr_case/اللائحة التنفيذية لنظام العمل وملحقاتها.pdf
 ```
 
 If you have a different PDF name or location, update `config.py`:
@@ -191,7 +191,7 @@ Build employee database and ingest PDF:
 
 ```bash
 conda activate exp
-cd /home/saad/hr_case
+cd /home/hr_case
 
 # Option A: Run everything automatically
 python scripts/run_all.py
@@ -216,7 +216,7 @@ python scripts/sanity_demo.py
 
 ```bash
 conda activate exp
-cd /home/saad/hr_case
+cd /home/hr_case
 streamlit run app/app.py
 ```
 
@@ -252,7 +252,7 @@ Edit [config.py](config.py) to customize:
 
 ```python
 # Paths
-PROJECT_ROOT = "/home/saad/hr_case"
+PROJECT_ROOT = "/home/hr_case"
 PDF_PATH = PROJECT_ROOT / "اللائحة التنفيذية لنظام العمل وملحقاتها.pdf"
 EMBED_MODEL_PATH = PROJECT_ROOT / "models1/BAAI__bge-m3"
 LLM_MODEL_PATH = PROJECT_ROOT / "models1/Qwen__Qwen3-1.7B"
@@ -279,7 +279,7 @@ export EMPLOYEE_COUNT=500
 ## Troubleshooting | حل المشكلات
 
 ### Problem: PDF not found
-**Error:** `PDF not found at: /home/saad/hr_case/...`
+**Error:** `PDF not found at: /home/hr_case/...`
 
 **Solution:**
 1. Ensure PDF is placed at exact path in config
@@ -466,7 +466,7 @@ python config.py  # Print current config and warnings
 
 - [ ] Conda env `exp` activated
 - [ ] Dependencies installed (`pip install -r requirements.txt`)
-- [ ] PDF placed at `/home/saad/hr_case/اللائحة التنفيذية لنظام العمل وملحقاتها.pdf`
+- [ ] PDF placed at `/home/hr_case/اللائحة التنفيذية لنظام العمل وملحقاتها.pdf`
 - [ ] Embedding model downloaded to `models1/BAAI__bge-m3/`
 - [ ] LLM model downloaded to `models1/Qwen__Qwen3-1.7B/`
 - [ ] Employee DB built (`python scripts/build_employee_db.py`)
@@ -475,7 +475,5 @@ python config.py  # Print current config and warnings
 - [ ] Streamlit app running (`streamlit run app/app.py`)
 
 ---
-
-**Built with ❤️ for HR innovation in Saudi Arabia**
 
 **مبني بـ ❤️ للابتكار في الموارد البشرية في السعودية**
